@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="MessagePack, msgpack, JSON, Binary JSON, Serializer, Serialization" />
+  <meta name="description" content="MessagePack  " />
+
+  <title>MessagePack: It's like JSON. but fast and small.</title>
+
+  <!--[if lt IE 9]><script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js" ></script><![endif]-->
+  <link media="all" rel="stylesheet" type="text/css" href="css/yuibase.css" />
+  <link media="all" rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+  <link media="all" rel="stylesheet" type="text/css" href="css/all.css" />
+  <script type="text/javascript" src="js/all.js" ></script>
+  <script type="text/javascript" src="js/prettify/prettify.js" ></script>
+</head>
+<body onload="prettyPrint();changeQuickStart('qs-ruby',document.getElementById('quickstart-default'));">
+
+  <header id="header">
+    <div id="headerwrap">
+      <h1 id="logo"><a href="/">MessagePack</a></h1>
+      <nav id="topnav">
+        <ul>
+          <li><a href="https://github.com/msgpack">GitHub</a></li>
+          <li><a href="http://wiki.msgpack.org/display/MSGPACK/Home">Wiki</a></li>
+          <li><a href="http://twitter.com/search/MessagePack%20OR%20msgpack">#msgpack</a></li>
+          <li><a href="http://wiki.msgpack.org/display/MSGPACK/Format+specification">Spec</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="desc">
+    <div id="descbody">
+      <img id="descimg" width="421" height="251" src="images/msgpack-json.png"/>
+      <div id="desctext">
+        <h2>It's like JSON. but fast and small.</h2>
+        <p>MessagePack is a wicked fast binary serializer. It lets you exchange data among multiple languages like JSON, but it's faster and more space-efficient. For example, small integers (like flags or error code) are encoded into a single byte, and typical short strings only require an extra byte in addition to the strings themselves.</p>
+        <p>If you ever wished to use JSON for convenience (storing an image with metadata) but could not for technical reasons (encoding, size, speed...), MessagePack is a perfect replacement.</p>
+        <pre>&gt; require "msgpack"       # gem install msgpack
+&gt; msg = [1,2,3].to_msgpack  #=&gt; "\x93\x01\x02\x03"
+&gt; MessagePack.unpack(msg)   #=&gt; [1,2,3]</pre>
+        <p>...and <a href="#crosslang">many other languages</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="background">
+    <div id="content">
+      <h3>Testimonial</h3>
+      <div class="tmset">
+        <a class="tmleft"></a>
+
+        <div class="tm">
+          <a class="tmlogo" href="http://redis.io/"><img src="images/redis.png" alt="Redis" width="150" height="50" /></a>
+          <p class="tmtext">"Redis scripting has support for MessagePack because it is a fast and compact serialization format with a simple to implement specification. I liked it so much that I implemented a MessagePack C extension for Lua just to include it into Redis."</p>
+          <p class="tmauthor">Salvatore Sanfilippo, creator of Redis.</p>
+        </div>
+
+        <div class="tm">
+          <a class="tmlogo" href="http://pinterest.com/"><img src="images/pinterest.png" alt="Pinterest" width="197" height="50" /></a>
+          <p class="tmtext">"MessagePack has been simply invaluable to us. We use MessagePack + Memcache to cache many of our feeds on Pinterest. These feeds are compressed and very quick to unpack thanks to MessagePack while Memcache gives us fast atomic pushes."</p>
+          <p class="tmauthor">Marty Weiner, Software Engineer.</p>
+        </div>
+
+        <div class="tm">
+          <a class="tmlogo" href="http://saltstack.com/"><img src="images/saltstack.png" alt="Salt Stack" width="251" height="46" /></a>
+          <p class="tmtext">"I use MessagePack for all of the data serialization in Salt, it is fantastic! I tested quite a few serialization formats and MessagePack was dramatically faster and the data was always smaller. When I changed out pickles for MessagePack in Salt there was a speed increase of almost 3 fold across the board."</p>
+          <p class="tmauthor">Tom Hatch, author of Salt.</p>
+        </div>
+
+        <a class="tmright"></a>
+      </div>
+
+      <h3 id="crosslang">Implementation projects</h3>
+      <div class="qsset">
+        <ul class="qslist">
+          <li><a onclick="changeQuickStart('qs-ruby',this)" id="quickstart-default">Ruby</a></li>
+          <li><a onclick="changeQuickStart('qs-python',this)">Python</a></li>
+          <li><a onclick="changeQuickStart('qs-perl',this)">Perl</a></li>
+          <li><a onclick="changeQuickStart('qs-cpp',this)">C/C++</a></li>
+          <li><a onclick="changeQuickStart('qs-java',this)">Java</a></li>
+          <li><a onclick="changeQuickStart('qs-php',this)">PHP</a></li>
+          <li><a onclick="changeQuickStart('qs-javascript',this)">JavaScript</a></li>
+          <li><a onclick="changeQuickStart('qs-objective-c',this)">Objective-C</a></li>
+          <li><a onclick="changeQuickStart('qs-csharp',this)">C#/CLI</a></li>
+          <li><a onclick="changeQuickStart('qs-lua',this)">Lua</a></li>
+          <li><a onclick="changeQuickStart('qs-scala',this)">Scala</a></li>
+          <li><a onclick="changeQuickStart('qs-d',this)">D</a></li>
+          <li><a onclick="changeQuickStart('qs-haskell',this)">Haskell</a></li>
+          <li><a onclick="changeQuickStart('qs-erlang',this)">Erlang</a></li>
+          <li><a onclick="changeQuickStart('qs-ocaml',this)">OCaml</a></li>
+          <li><a onclick="changeQuickStart('qs-go',this)">Go</a></li>
+        </ul>
+
+        <div id="quickstart" class="qsholder">asdf</div>
+
+        <div id="qs-ruby" class="qs">
+          <h4>Ruby</h4>
+          <pre class="prettyprint">require "msgpack"       # gem install msgpack
+msg = [1,2,3].to_msgpack  #=&gt; "\x93\x01\x02\x03"
+MessagePack.unpack(msg)   #=&gt; [1,2,3]</pre>
+          <p>Ruby implementation supports zero-copy feature.</p>
+          <ul class="hlist">
+            <li><a>Quick Start</a></li>
+            <li><a>API Reference</a></li>
+          </ul>
+        </div>
+
+        <div id="qs-python" class="qs">
+          <h4>Python</h4>
+          <pre class="prettyprint">python code...</pre>
+          <ul class="hlist">
+            <li><a>Quick Start</a></li>
+            <li><a>API Reference</a></li>
+          </ul>
+        </div>
+
+        <div id="qs-perl" class="qs">
+          <h4>Perl</h4>
+        </div>
+
+        <div id="qs-cpp" class="qs">
+          <h4>C/C++</h4>
+        </div>
+
+        <div id="qs-java" class="qs">
+          <h4>Java</h4>
+        </div>
+
+        <div id="qs-php" class="qs">
+          <h4>PHP</h4>
+        </div>
+
+        <div id="qs-javascript" class="qs">
+          <h4>JavaScript</h4>
+        </div>
+
+        <div id="qs-objective-c" class="qs">
+          <h4>Objective-C</h4>
+        </div>
+
+        <div id="qs-csharp" class="qs">
+          <h4>C#/CLI</h4>
+        </div>
+
+        <div id="qs-lua" class="qs">
+          <h4>Lua</h4>
+        </div>
+
+        <div id="qs-scala" class="qs">
+          <h4>Scala</h4>
+        </div>
+
+        <div id="qs-d" class="qs">
+          <h4>D</h4>
+        </div>
+
+        <div id="qs-haskell" class="qs">
+          <h4>Haskell</h4>
+        </div>
+
+        <div id="qs-erlang" class="qs">
+          <h4>Erlang</h4>
+        </div>
+
+        <div id="qs-ocaml" class="qs">
+          <h4>OCaml</h4>
+        </div>
+
+        <div id="qs-go" class="qs">
+          <h4>Go</h4>
+        </div>
+      </div>
+
+      <h3>Related projects</h3>
+      <div class="paragraphs">
+        <dl>
+          <dt><a>MessagePack-RPC for Ruby</a></dt>
+          <dd>MessagePack-RPC for Ruby is ...</dd>
+
+          <dt><a>MessagePack-RPC for C++</a></dt>
+          <dd>MessagePack-RPC for C++ is ...</dd>
+
+          <dt><a>ZeroRPC</a></dt>
+          <dd>ZeroRPC is ...</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div id="footerbody" class="paragraphs">
+      <div id="social">
+        <div class="fb-like" data-href="http://msgpack.org/" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+        <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=msgpack&repo=msgpack&type=watch&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=msgpack&repo=msgpack&type=fork&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+      </div>
+      <p id="sponsor"><a href="http://treasure-data.com/?source=mp">Sponsored by Treasure Data, Inc. <img src="images/td-square-icon.png" width="20px" /></a></p>
+      <p>Copyright &copy; 2008-2012 FURUHASHI Sadayuki</p>
+    </div>
+
+  </footer>
+</body>
+</html>
