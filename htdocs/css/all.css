@@ -223,7 +223,7 @@ h3 {
 
 /* quick starts */
 .qsset {
-	height:18em;
+	height:20em;
 	padding:20px;
 	/*background-color:#383838;*/
 	background-color:#444444;
@@ -232,13 +232,17 @@ h3 {
 .qsholder {
 	float:right;
 	width:655px;
-	padding:1.5em 18px 1.5em 18px;
-	height:15em;
+	padding:1.5em 18px 0em 18px;
+	height:18.5em;
 	background-color:#ffffff;
 	border:1px solid #999999;
 	overflow:auto;
 	/*color:#bbbbbb;*/
 }
+.qs {
+	display:none;
+}
+
 .qsholder h4 {
 	margin-bottom:10px;
 	font-size:19px;
@@ -248,34 +252,34 @@ h3 {
 }
 .qsholder pre {
 	font-size:100%;
-	padding:10px 15px 10px 15px;
+	padding:8px 15px 8px 15px;
+	margin:0 0 0.8em 0;
 	font-family:Monaco, Courier, sans-serif;
 	border:1px solid #666;
 	/*background-color:#262626;*/
 	background-color:#faffff;
-	font-weight: bold;
+	font-weight:bold;
 	line-height:140%;
 	border:1px solid #005181;
 }
-.qs {
-	display:none;
+.qsholder p {
+	margin-bottom:0.4em;
 }
 
 .hlist {
-	margin:0 0 1em 0;
+	margin:0 0 0.8em 0;
 	padding:0;
 }
 .hlist li {
 	list-style-type:none;
 	float:left;
-	margin-right:2em;
+	margin-right:3em;
 }
 .hlist:after {
 	content:'';
 	display:block;
 	clear:both;
 }
-
 .qslist {
 	float:left;
 	width:260px;

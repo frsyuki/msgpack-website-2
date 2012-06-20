@@ -108,43 +108,98 @@
 
         <div id="qs-ruby" class="qs">
           <h4>Ruby</h4>
-          <pre class="prettyprint">require "msgpack"       # gem install msgpack
+          <ul class="hlist">
+            <li><a href="http://msgpack.org/rdoc/current/MessagePack.html">API Reference</a></li>
+            <li><a href="http://rubygems.org/gems/msgpack">RubyGems</a></li>
+          </ul>
+          <pre class="prettyprint">gem install msgpack</pre>
+          <pre class="prettyprint">require "msgpack"
 msg = [1,2,3].to_msgpack  #=&gt; "\x93\x01\x02\x03"
 MessagePack.unpack(msg)   #=&gt; [1,2,3]</pre>
-          <p>Ruby implementation supports zero-copy feature.</p>
-          <ul class="hlist">
-            <li><a>Quick Start</a></li>
-            <li><a>API Reference</a></li>
-          </ul>
+          <p>Ruby implementation provides <a href="http://msgpack.org/rdoc/current/MessagePack/Unpacker.html">streaming deserializer</a>.</p>
         </div>
 
         <div id="qs-python" class="qs">
           <h4>Python</h4>
-          <pre class="prettyprint">python code...</pre>
           <ul class="hlist">
-            <li><a>Quick Start</a></li>
-            <li><a>API Reference</a></li>
+            <li><a href="http://pypi.python.org/pypi/msgpack-python/">PyPI</a></li>
           </ul>
+          <pre class="prettyprint">easy_install msgpack-python</pre>
+          <pre class="prettyprint">import msgpack
+msg = msgpack.packb([1,2,3])    #=&gt; "\x93\x01\x02\x03"
+msgpack.unpackb(msg)            #=&gt; [1,2,3]
+help(msgpack)</pre>
+          <p>Python implementation provides streaming deserializer.</p>
         </div>
 
         <div id="qs-perl" class="qs">
           <h4>Perl</h4>
+          <ul class="hlist">
+            <li><a href="http://search.cpan.org/~tokuhirom/Data-MessagePack/lib/Data/MessagePack.pm">API Reference</a></li>
+            <li><a href="http://search.cpan.org/~tokuhirom/Data-MessagePack/">CPAN</a></li>
+          </ul>
+          <pre class="prettyprint">cpan Data::MessagePack</pre>
+          <pre class="prettyprint">use Data::MessagePack;
+my $packed   = Data::MessagePack-&gt;pack($dat);
+my $unpacked = Data::MessagePack-&gt;unpack($dat);</pre>
+          <p>Perl implementation provides <a href="http://search.cpan.org/~tokuhirom/Data-MessagePack/lib/Data/MessagePack/Unpacker.pod">streaming deserializer</a>.</p>
         </div>
 
         <div id="qs-cpp" class="qs">
           <h4>C/C++</h4>
+          <ul class="hlist">
+            <li><a href="http://wiki.msgpack.org/display/MSGPACK/QuickStart+for+C+Language">Quick Start for C</a></li>
+            <li><a href="http://wiki.msgpack.org/pages/viewpage.action?pageId=1081387">Quick Start for C++</a></li>
+          </ul>
+          <pre class="prettyprint">port install msgpack  # MacPorts
+brew install msgpack  # Homebrew
+apt-get install libmsgpack-dev  # Ubuntu</pre>
+          <p>Or download <a href="http://msgpack.org/releases/cpp/msgpack-0.5.7.tar.gz">msgpack-0.5.7.tar.gz</a> and build it to install.</p>
+          <pre class="prettyprint">#include &lt;msgpack.hpp&gt;
+struct myclass { std::vector<int> vec; MSGPACK_DEFINE(vec); };
+msgpack::pack(buffer, vec);
+msgpack::unpack(&amp;result, buffer.data(), buffer.size());</pre>
         </div>
 
         <div id="qs-java" class="qs">
           <h4>Java</h4>
+          <ul class="hlist">
+            <li><a href="http://msgpack.org/javadoc/current/">API Reference</a></li>
+            <li><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.msgpack%22%20AND%20a%3A%22msgpack%22">Maven</a></li>
+            <li><a href="https://github.com/msgpack/msgpack-java">GitHub</a></li>
+          </ul>
+          <pre class="prettyprint">import org.msgpack.MessagePack;
+
+MessagePack msgpack = new MessagePack();
+byte[] bytes = msgpack.write(object);
+MyClass object = msgpack.read(bytes, MyClass.class);</pre>
+          <p>Java implementation provides <a href="http://msgpack.org/javadoc/current/org/msgpack/unpacker/package-summary.html">streaming deserializer</a>, <a href="http://msgpack.org/javadoc/current/org/msgpack/type/package-summary.html">dynamically typed objects</a>, <a href="http://msgpack.org/javadoc/current/org/msgpack/template/package-summary.html">type conversion templates</a>, <a href="http://msgpack.org/javadoc/current/org/msgpack/template/builder/package-summary.html">dynamic template generators</a> and <a href="http://msgpack.org/javadoc/current/org/msgpack/annotation/package-summary.html">annotations</a>.</p>
+          <p>Take a look at <a href="https://github.com/msgpack/msgpack-java/tree/master/src/test/java/org/msgpack">test cases</a> for examples.</p>
         </div>
 
         <div id="qs-php" class="qs">
           <h4>PHP</h4>
+          <ul class="hlist">
+            <li><a href="http://wiki.msgpack.org/display/MSGPACK/QuickStart+for+PHP">Quick Start</a></li>
+          </ul>
+          <pre class="prettyprint">git clone https://github.com/msgpack/msgpack.git
+cd msgpack/php
+phpize
+./configure &amp;&amp; make &amp;&amp; make install</pre>
+          <pre class="prettyprint">$data = array(0=&gt;1,1=&gt;2,2=&gt;3);
+$msg = msgpack_pack($data);
+$data = msgpack_unpack($msg);</pre>
         </div>
 
         <div id="qs-javascript" class="qs">
           <h4>JavaScript</h4>
+          <ul class="hlist">
+            <li><a href="https://github.com/msgpack/msgpack-javascript">GitHub</a></li>
+            <li><a href="https://raw.github.com/msgpack/msgpack-javascript/master/msgpack.js">msgpack.js</a></li>
+          </ul>
+          <pre class="prettyprint">var myByteArray = msgpack.pack(myObject);
+myObject = msgpack.unpack(myByteArray);</pre>
+          <p>Licensed under MIT license.</p>
         </div>
 
         <div id="qs-objective-c" class="qs">
