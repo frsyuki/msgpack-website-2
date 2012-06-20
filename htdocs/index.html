@@ -58,7 +58,7 @@
 
   <div id="background">
     <div id="content">
-      <h3>Testimonial</h3>
+      <h3>Happy Hackers :-)</h3>
       <div class="tmset">
         <a class="tmleft"></a>
 
@@ -241,6 +241,18 @@ var value = serializer.Unpack(stream);
 
         <div id="qs-d" class="qs">
           <h4>D</h4>
+          <ul class="hlist">
+            <!-- <li><a href="http://msgpack.github.org/msgpack-d">API Reference</a></li> -->
+            <li><a href="https://github.com/msgpack/msgpack-d">GitHub</a></li>
+          </ul>
+          <p>msgpack-d is only one file. Please msgpack.d into your project.</p>
+          <pre class="prettyprint">import msgpack;
+
+Tuple!(uint, string) recieve, send = tuple(2012. "Hello D!");
+serialized = pack(msg);
+unpack(serialized, recieve);
+assert(send == recieve);</pre>
+          <p>D implementation also provides streaming deserializer.</p>
         </div>
 
         <div id="qs-haskell" class="qs">
@@ -249,6 +261,17 @@ var value = serializer.Unpack(stream);
 
         <div id="qs-erlang" class="qs">
           <h4>Erlang</h4>
+          <ul class="hlist">
+            <li><a href="http://msgpack.org/edoc/">API Reference</a></li>
+            <li><a href="http://github.com/msgpack/msgpack-erlang">Repository</a></li>
+          </ul>
+          <p>Write into your <a href="http://github.com/basho/rebar">rebar</a>.config:</p>
+          <pre class="prettyprint">{deps, [
+  {erl_msgpack, ".*",
+    {git, "git://github.com/msgpack/msgpack-erlang.git", "HEAD"}}
+]}.</pre>
+          <pre class="prettyprint">Spam = msgpack:pack(Ham),
+Ham = msgpack:unpack(Spam).</pre>
         </div>
 
         <div id="qs-ocaml" class="qs">
