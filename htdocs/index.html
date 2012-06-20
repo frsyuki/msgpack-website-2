@@ -46,7 +46,7 @@
       <img id="descimg" width="421" height="251" src="images/msgpack-json.png"/>
       <div id="desctext">
         <h2>It's like JSON. but fast and small.</h2>
-        <p>MessagePack is a wicked fast binary serializer. It lets you exchange data among multiple languages like JSON, but it's faster and more space-efficient. For example, small integers (like flags or error code) are encoded into a single byte, and typical short strings only require an extra byte in addition to the strings themselves.</p>
+        <p>MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON but it's faster and smaller. For example, small integers (like flags or error code) are encoded into a single byte, and typical short strings only require an extra byte in addition to the strings themselves.</p>
         <p>If you ever wished to use JSON for convenience (storing an image with metadata) but could not for technical reasons (encoding, size, speed...), MessagePack is a perfect replacement.</p>
         <pre>&gt; require "msgpack"       # gem install msgpack
 &gt; msg = [1,2,3].to_msgpack  #=&gt; "\x93\x01\x02\x03"
