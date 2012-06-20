@@ -204,10 +204,29 @@ myObject = msgpack.unpack(myByteArray);</pre>
 
         <div id="qs-objective-c" class="qs">
           <h4>Objective-C</h4>
+          <ul class="hlist">
+            <li><a href="https://github.com/msgpack/msgpack-objectivec">GitHub</a></li>
+          </ul>
+          <pre class="prettyprint">
+#import "MessagePack.h"
+..
+NSData* packed = [someArray messagePack];
+NSArray* someArray = [packed messagePackParse];
+          </pre>
         </div>
 
         <div id="qs-csharp" class="qs">
           <h4>C#/CLI</h4>
+          <ul class="hlist">
+            <li><a href="https://github.com/msgpack/msgpack-cli">GitHub</a></li>
+            <li><a href="https://github.com/yfakariya/msgpack/wiki/">Wiki</a></li>
+          </ul>
+          <pre class="prettyprint">
+var serializer = MessagePackSerializer.Create<Foo>();
+serializer.Pack(foo, stream);
+stream.Position = 0;
+var value = serializer.Unpack(stream);
+          </pre>
         </div>
 
         <div id="qs-lua" class="qs">
@@ -232,6 +251,16 @@ myObject = msgpack.unpack(myByteArray);</pre>
 
         <div id="qs-ocaml" class="qs">
           <h4>OCaml</h4>
+          <pre class="prettyprint">
+$ git clone git@github.com:msgpack/msgpack.git
+$ cd msgpack/ocaml
+$ omake
+$ omake install
+          </pre>
+          <pre class="prettyprint">
+Msgpack.Serialize.desrialize_string("\147\001\002\003");;
+          </pre>
+          <a href="https://github.com/msgpack/msgpack/tree/master/ocaml/proof">This library is mathematically proven!</a>
         </div>
 
         <div id="qs-go" class="qs">
