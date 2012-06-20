@@ -183,16 +183,16 @@ h3 {
 	color:#999999;
 	display:block;
 }
-/* TODO
 .tmleft:hover, .tmright:hover {
 	background-color:#eeeeee;
 }
-*/
 .tmleft {
 	float:left;
+    background:url(../images/arrow1.png) 8px 80px no-repeat;
 }
 .tmright {
 	float:right;
+    background:url(../images/arrow2.png) 8px 80px no-repeat;
 }
 .tm {
 	float:left;
@@ -219,6 +219,17 @@ h3 {
 }
 .tmauthor {
 	font-family:verdana;
+}
+.tmcontribute {
+    float:right;
+    width:334px; /* .tm:width:290 + .tm:padding:12*2 + 20px */
+    margin-top:12px;
+    font-size:95%;
+}
+.tmcontribute:after {
+	content:'';
+	display:block;
+	clear:both;
 }
 
 /* quick starts */
