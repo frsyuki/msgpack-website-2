@@ -188,11 +188,11 @@ h3 {
 }
 .tmleft {
 	float:left;
-    background:url(../images/arrow1.png) 8px 80px no-repeat;
+	background:url(../images/arrow1.png) 8px 80px no-repeat;
 }
 .tmright {
 	float:right;
-    background:url(../images/arrow2.png) 8px 80px no-repeat;
+	background:url(../images/arrow2.png) 8px 80px no-repeat;
 }
 .tm {
 	float:left;
@@ -221,10 +221,10 @@ h3 {
 	font-family:verdana;
 }
 .tmcontribute {
-    float:right;
-    width:334px; /* .tm:width:290 + .tm:padding:12*2 + 20px */
-    margin-top:12px;
-    font-size:95%;
+	float:right;
+	width:334px; /* .tm:width:290 + .tm:padding:12*2 + 20px */
+	margin-top:12px;
+	font-size:95%;
 }
 .tmcontribute:after {
 	content:'';
@@ -385,6 +385,7 @@ a:hover {
  */
 #footer {
 	background:url(../images/shadow1000bottom.png) 50% 0 no-repeat;
+	padding-bottom:50px;
 }
 
 #footerbody {
